@@ -1,0 +1,55 @@
+{
+    "name": "andreapollastri/larapi",
+    "description": "Easily build Eloquent queries from API requests.",
+    "keywords": [
+        "laravel",
+        "eloquent",
+        "filter",
+        "api",
+        "restful"
+    ],
+    "homepage": "https://github.com/andreapollastri/larapi",
+    "license": "MIT",
+    "type": "package",
+    "authors": [
+        {
+            "name": "Andrea Pollastri",
+            "email": "mail@andrea.dev"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0|^8.1",
+        "illuminate/support": "^8.0|^9.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Andr3a\\Larapi\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Andr3a\\Larapi\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "./vendor/bin/phpunit tests",
+        "test-coverage": "./vendor/bin/phpunit tests --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Andr3a\\Larapi\\LarapiServiceProvider"
+            ],
+            "aliases": {
+                "Larapi": "Andr3a\\Larapi\\LarapiFacade"
+            }
+        }
+    }
+}
